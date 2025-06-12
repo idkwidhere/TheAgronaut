@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1n6a7gf1auln"]
+
+[ext_resource type="Script" uid="uid://dvxwwf8ay546" path="res://Entities/Player/player.gd" id="1_mv1ah"]
+[ext_resource type="Texture2D" uid="uid://rhwuog8sqv4q" path="res://Entities/Player/Assets/player.png" id="2_3uyv8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3uyv8"]
+radius = 11.0
+height = 56.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3uyv8"]
+radius = 48.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_mv1ah")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(2, 2)
+texture = ExtResource("2_3uyv8")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_3uyv8")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="InteractCollider" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CircleShape2D_3uyv8")
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Crop" load_steps=6 format=3 uid="uid://cnsqvaojitl16"]
+
+[ext_resource type="Script" uid="uid://btvb1hu7i7kjm" path="res://Crops/cropstats.gd" id="1_nm3ow"]
+[ext_resource type="Texture2D" uid="uid://dr11s3sg0mp3p" path="res://Crops/Carrot/stage1.png" id="2_qdsck"]
+[ext_resource type="Texture2D" uid="uid://dwqkhqcitcy43" path="res://Crops/Carrot/stage2.png" id="3_0mcyi"]
+[ext_resource type="Texture2D" uid="uid://bn1xxkotc4cr6" path="res://Crops/Carrot/stage3.png" id="4_xuil0"]
+[ext_resource type="Texture2D" uid="uid://bbxafdddgi2g3" path="res://Crops/Carrot/stage4.png" id="5_lpiu0"]
+
+[resource]
+script = ExtResource("1_nm3ow")
+crop_name = "Carrot"
+crop_stages = 3
+crop_stage_time = 5.0
+crop_stage_art = Array[Texture2D]([ExtResource("2_qdsck"), ExtResource("3_0mcyi"), ExtResource("4_xuil0"), ExtResource("5_lpiu0")])
+metadata/_custom_type_script = "uid://btvb1hu7i7kjm"

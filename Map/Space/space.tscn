@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cttt6vp0efqrv"]
+
+[ext_resource type="PackedScene" uid="uid://oth4mrxvkfxu" path="res://Map/TheAgronaut/the_agronaut.tscn" id="1_jbgxd"]
+[ext_resource type="PackedScene" uid="uid://b1n6a7gf1auln" path="res://Entities/Player/player.tscn" id="2_c4aad"]
+[ext_resource type="Texture2D" uid="uid://buow0gthby1pu" path="res://icon.svg" id="3_c4aad"]
+
+[node name="Space" type="Node2D"]
+
+[node name="TheAgronaut" parent="." instance=ExtResource("1_jbgxd")]
+
+[node name="Player" parent="." instance=ExtResource("2_c4aad")]
+position = Vector2(65, 101)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-58, 17)
+texture = ExtResource("3_c4aad")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(312, -61)
+texture = ExtResource("3_c4aad")

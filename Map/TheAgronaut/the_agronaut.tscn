@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://oth4mrxvkfxu"]
+
+[ext_resource type="PackedScene" uid="uid://qfpqoylo25pd" path="res://Planters/SmallPlanter/small_planter.tscn" id="1_hcfgh"]
+
+[node name="TheAgronaut" type="Node2D"]
+
+[node name="SmallPlanter" parent="." instance=ExtResource("1_hcfgh")]
+position = Vector2(166, 96)
+
+[node name="SmallPlanter2" parent="." instance=ExtResource("1_hcfgh")]
+position = Vector2(163, 186)
