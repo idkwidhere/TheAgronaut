@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d52va7x6u8vh"]
+
+[ext_resource type="Texture2D" uid="uid://cx1urapciylrd" path="res://Crops/Carrot/carrot.png" id="1_121fd"]
+[ext_resource type="Script" uid="uid://bpagj5icxcab" path="res://Items/item.gd" id="1_psexo"]
+
+[resource]
+script = ExtResource("1_psexo")
+item_name = "Carrot"
+item_art = ExtResource("1_121fd")
+item_max_stack_size = 0
+metadata/_custom_type_script = "uid://bpagj5icxcab"

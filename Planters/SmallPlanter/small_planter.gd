@@ -3,6 +3,10 @@ class_name SmallPlanter
 
 #interaction and notification
 var showing_interaction = false
+#interact menu
+var is_menu_open = false
+var crop_to_plant: Crop
+
 
 #growing stuff
 var is_growing = false
@@ -22,7 +26,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func test():
 	print("interacted with " + str(self))
 
@@ -35,13 +38,20 @@ func hide_interaction():
 	%Interactable.hide()
 
 func interact_handler(crop):
-	if is_empty and !is_growing:
-		start_crop(crop)
-	elif !is_growing:
+	
+	if !is_growing and !is_empty:
 		collect_crop()
+	elif !is_growing and is_empty:
+		%PlanterMenu.show()
+		is_menu_open = true
+		start_crop(preload("res://Crops/Carrot/carrotstats.tres"))
+		
+	elif is_growing and is_menu_open:
+		%PlanterMenu.hide()
+		is_menu_open = false
 	else:
 		print("Not ready!")
-		
+	
 		
 func start_crop(crop_resource):
 	if !is_growing:
@@ -55,20 +65,15 @@ func start_crop(crop_resource):
 		print(str(current_crop.crop_name) + " planted") 
 		%GrowTimer.wait_time = current_crop.crop_stage_time
 		%GrowTimer.start()
-	else: 
-		print("Not ready!")
+		
 
-
-func crop_finished():
-	current_crop = null
-	print("crop is done")
 
 func collect_crop():
-	print("you collect teh crop")
 	%CurrentCrop.texture = null
 	is_empty = true
 
-func advance_crop_stage():
+
+func _on_grow_timer_timeout() -> void:
 	current_crop_stage += 1
 	current_crop_stage_art = crop_stage_art[current_crop_stage - 1]
 	%CurrentCrop.texture = current_crop_stage_art
@@ -76,7 +81,8 @@ func advance_crop_stage():
 		%GrowTimer.start()
 	else:
 		is_growing = false
-		crop_finished()
+		current_crop = null
 
-func _on_grow_timer_timeout() -> void:
-	advance_crop_stage()
+
+func _on_plant_button_pressed() -> void:
+	pass

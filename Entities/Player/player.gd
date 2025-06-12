@@ -11,9 +11,13 @@ var interactables: bool = false
 var closest_interactable = 0
 var closest_distance
 
+# inventory
+var is_player_menu_open = false
+var player_inventory: Inventory = preload("res://Entities/Player/player_inventory.tres")
 
 #planting - will eventually be loaded form inventory
-const CARROT = preload("res://Crops/Carrot/carrot.tres")
+const CARROT = preload("res://Crops/Carrot/carrotstats.tres")
+
 
 func _physics_process(delta: float) -> void:
 	player_direction.x = Input.get_axis("move_left", "move_right")
@@ -32,15 +36,22 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, speed)
 		#more animation 
 		
-	
-
 	move_and_slide()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and interactable:
 		interactable[0].interact_handler(CARROT)
-		
+	if Input.is_action_just_pressed("menu"):
+		open_player_menu()
 	
+
+func open_player_menu():
+	if !is_player_menu_open:
+		%PlayerMenu.show()
+		is_player_menu_open = true
+	elif is_player_menu_open:
+		%PlayerMenu.hide()
+		is_player_menu_open = false
 
 func find_closest_interactable(): # sort all interactables in range to get the closest one to interact with
 	for item in interactable:

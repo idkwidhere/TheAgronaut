@@ -31,5 +31,15 @@ zoom = Vector2(3.5, 3.5)
 [node name="InteractCollider" type="CollisionShape2D" parent="InteractArea"]
 shape = SubResource("CircleShape2D_3uyv8")
 
+[node name="PlayerMenu" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Panel" type="Panel" parent="PlayerMenu"]
+offset_left = 347.0
+offset_top = 110.0
+offset_right = 1636.0
+offset_bottom = 926.0
+
 [connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]
