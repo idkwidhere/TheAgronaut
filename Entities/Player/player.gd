@@ -39,11 +39,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	pass
+	
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and interactable:
 		interactable[0].interact_handler(CARROT)
 	if Input.is_action_just_pressed("menu"):
 		open_player_menu()
-	
 
 func open_player_menu():
 	if !is_player_menu_open:
