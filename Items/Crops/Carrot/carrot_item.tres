@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ckgh68mb3j0ou"]
+
+[ext_resource type="Script" uid="uid://bpagj5icxcab" path="res://Items/item_data.gd" id="1_eqsnf"]
+[ext_resource type="Texture2D" uid="uid://cx1urapciylrd" path="res://Items/Crops/Carrot/carrot.png" id="1_w1i2b"]
+
+[resource]
+script = ExtResource("1_eqsnf")
+item_name = "Carrot"
+stackable = true
+item_art = ExtResource("1_w1i2b")
+description = "Yum! For mouths only..."
+metadata/_custom_type_script = "uid://bpagj5icxcab"

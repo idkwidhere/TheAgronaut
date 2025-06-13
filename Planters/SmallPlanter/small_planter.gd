@@ -44,7 +44,7 @@ func interact_handler(crop):
 	elif !is_growing and is_empty:
 		%PlanterMenu.show()
 		is_menu_open = true
-		start_crop(preload("res://Crops/Carrot/carrotstats.tres"))
+		start_crop(preload("res://Items/Crops/Carrot/carrotstats.tres"))
 		
 	elif is_growing and is_menu_open:
 		%PlanterMenu.hide()

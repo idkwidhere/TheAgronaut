@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn1xxkotc4cr6"
-path="res://.godot/imported/stage3.png-d7eda7acc124ff1ff9760e67d71bac44.ctex"
+uid="uid://dwqkhqcitcy43"
+path="res://.godot/imported/stage2.png-b48422e687d87c7278c4022ea3ffcca6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crops/Carrot/stage3.png"
-dest_files=["res://.godot/imported/stage3.png-d7eda7acc124ff1ff9760e67d71bac44.ctex"]
+source_file="res://Items/Crops/Carrot/stage2.png"
+dest_files=["res://.godot/imported/stage2.png-b48422e687d87c7278c4022ea3ffcca6.ctex"]
 
 [params]
 

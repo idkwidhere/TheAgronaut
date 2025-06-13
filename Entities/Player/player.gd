@@ -13,10 +13,10 @@ var closest_distance
 
 # inventory
 var is_player_menu_open = false
-var player_inventory: Inventory = preload("res://Entities/Player/player_inventory.tres")
+var player_inventory: InventoryData = preload("res://Entities/Player/player_inventory.tres")
 
-#planting - will eventually be loaded form inventory
-const CARROT = preload("res://Crops/Carrot/carrotstats.tres")
+#planting - will eventually be loaded from inventory
+const CARROT = preload("res://Items/Crops/Carrot/carrotstats.tres")
 
 
 func _physics_process(delta: float) -> void:
@@ -47,6 +47,7 @@ func _process(delta: float) -> void:
 
 func open_player_menu():
 	if !is_player_menu_open:
+		SignalBus.emit_signal("player_inventory", player_inventory)
 		%PlayerMenu.show()
 		is_player_menu_open = true
 	elif is_player_menu_open:
