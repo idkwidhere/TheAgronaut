@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://d14xug601no3"]
+
+[ext_resource type="Script" uid="uid://d4fade80i4ome" path="res://Globals/time.gd" id="1_on0ou"]
+[ext_resource type="Texture2D" uid="uid://cp0c8ioc2wbt3" path="res://Entities/Player/UI/clock.png" id="2_poy0d"]
+
+[node name="Time" type="Node"]
+script = ExtResource("1_on0ou")
+
+[node name="MinuteTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Clock" type="CanvasLayer" parent="."]
+
+[node name="ClockArt" type="Sprite2D" parent="Clock"]
+position = Vector2(1788, 66)
+scale = Vector2(4.125, 4.125)
+texture = ExtResource("2_poy0d")
+
+[node name="Hours" type="Label" parent="Clock/ClockArt"]
+unique_name_in_owner = true
+offset_left = -24.4849
+offset_top = -10.9091
+offset_right = 15.5151
+offset_bottom = 12.0909
+text = "00"
+
+[node name="Minutes" type="Label" parent="Clock/ClockArt"]
+unique_name_in_owner = true
+offset_left = 3.87876
+offset_top = -10.6667
+offset_right = 43.8788
+offset_bottom = 12.3333
+text = "00"
+
+[connection signal="timeout" from="MinuteTimer" to="." method="_on_minute_timer_timeout"]

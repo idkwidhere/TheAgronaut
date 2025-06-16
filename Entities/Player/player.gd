@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-var speed = 200
+var speed = 160
 var player_direction: Vector2
 
 
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and interactable:
-		interactable[0].interact_handler(CARROT)
+		interactable[0].interact_handler()
 	if Input.is_action_just_pressed("menu"):
 		open_player_menu()
 
@@ -82,5 +82,4 @@ func subtract_player_inventory_item(item: SlotData) -> void:
 		print("found it")
 
 func _send_player_inventory() -> void:
-	print("sent player inventory")
 	SignalBus.emit_signal("player_inventory", player_inventory)

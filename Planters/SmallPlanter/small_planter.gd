@@ -44,7 +44,7 @@ func hide_interaction():
 	showing_interaction = false
 	%Interactable.hide()
 
-func interact_handler(crop):
+func interact_handler():
 	
 	if !is_growing and !is_empty:
 		collect_crop()
