@@ -16,8 +16,10 @@ var is_player_menu_open = false
 var player_inventory: InventoryData = preload("res://Entities/Player/player_inventory.tres")
 
 #planting - will eventually be loaded from inventory
-const CARROT = preload("res://Items/Crops/Carrot/carrotstats.tres")
+const CARROT = preload("res://Items/Crops/Carrot/carrot_seed.tres")
 
+func _ready() -> void:
+	SignalBus.connect("request_player_inventory", _send_player_inventory)
 
 func _physics_process(delta: float) -> void:
 	player_direction.x = Input.get_axis("move_left", "move_right")
@@ -73,4 +75,9 @@ func _on_interact_area_body_exited(body: Node2D) -> void:
 		interactable.erase(body)
 	if !interactable:
 		interactables = false
-		
+
+
+
+func _send_player_inventory() -> void:
+	print("sent player inventory")
+	SignalBus.emit_signal("player_inventory", player_inventory)

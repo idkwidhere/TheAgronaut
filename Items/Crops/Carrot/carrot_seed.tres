@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=6 format=3 uid="uid://cpyyv0cgfehhp"]
+
+[ext_resource type="Texture2D" uid="uid://dr11s3sg0mp3p" path="res://Items/Crops/Carrot/stage1.png" id="1_8bq1r"]
+[ext_resource type="Texture2D" uid="uid://dwqkhqcitcy43" path="res://Items/Crops/Carrot/stage2.png" id="2_j2quk"]
+[ext_resource type="Texture2D" uid="uid://bn1xxkotc4cr6" path="res://Items/Crops/Carrot/stage3.png" id="3_27yop"]
+[ext_resource type="Texture2D" uid="uid://bbxafdddgi2g3" path="res://Items/Crops/Carrot/stage4.png" id="4_hm6yw"]
+[ext_resource type="Script" uid="uid://dlmej6le62xqc" path="res://Items/Crops/seed_data.gd" id="5_8bq1r"]
+
+[resource]
+script = ExtResource("5_8bq1r")
+crop_stages = 3
+crop_stage_time = 3.0
+crop_stage_art = Array[Texture2D]([ExtResource("1_8bq1r"), ExtResource("2_j2quk"), ExtResource("3_27yop"), ExtResource("4_hm6yw")])
+item_name = ""
+item_type = 1
+stackable = true
+item_art = ExtResource("1_8bq1r")
+description = "Plant them!"
+metadata/_custom_type_script = "uid://dlmej6le62xqc"

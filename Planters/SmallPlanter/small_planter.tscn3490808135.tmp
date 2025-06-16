@@ -53,12 +53,15 @@ offset_bottom = -290.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PlanterMenu/PanelContainer"]
-custom_minimum_size = Vector2(64, 64)
+[node name="PlantableItems" type="Panel" parent="PlanterMenu/PanelContainer"]
 layout_mode = 2
 
-[node name="SeedContainer" type="GridContainer" parent="PlanterMenu/PanelContainer/MarginContainer"]
+[node name="ItemGrid" type="GridContainer" parent="PlanterMenu/PanelContainer/PlantableItems"]
 layout_mode = 2
+offset_left = 65.0
+offset_top = 106.0
+offset_right = 588.0
+offset_bottom = 376.0
 columns = 5
 
 [node name="PlantButton" type="Button" parent="PlanterMenu"]

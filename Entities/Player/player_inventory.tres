@@ -1,13 +1,20 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=6 format=3 uid="uid://d24hvjsyvv06d"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=8 format=3 uid="uid://d24hvjsyvv06d"]
 
 [ext_resource type="Script" uid="uid://dittobcqfamvr" path="res://Inventory/InventorySlots/slot_data.gd" id="1_e5qi0"]
 [ext_resource type="Resource" uid="uid://ckgh68mb3j0ou" path="res://Items/Crops/Carrot/carrot_item.tres" id="2_bp74d"]
 [ext_resource type="Script" uid="uid://bjxudhys0ni6" path="res://Inventory/inventory_data.gd" id="2_ouqwp"]
+[ext_resource type="Resource" uid="uid://cpyyv0cgfehhp" path="res://Items/Crops/Carrot/carrot_seed.tres" id="3_bp74d"]
 
 [sub_resource type="Resource" id="Resource_u0dfy"]
 script = ExtResource("1_e5qi0")
 item_data = ExtResource("2_bp74d")
 quantity = 6
+metadata/_custom_type_script = "uid://dittobcqfamvr"
+
+[sub_resource type="Resource" id="Resource_dtaw5"]
+script = ExtResource("1_e5qi0")
+item_data = ExtResource("3_bp74d")
+quantity = 5
 metadata/_custom_type_script = "uid://dittobcqfamvr"
 
 [sub_resource type="Resource" id="Resource_qii32"]
@@ -18,5 +25,5 @@ metadata/_custom_type_script = "uid://dittobcqfamvr"
 
 [resource]
 script = ExtResource("2_ouqwp")
-contents = Array[ExtResource("1_e5qi0")]([SubResource("Resource_u0dfy"), null, SubResource("Resource_qii32"), null, null])
+contents = Array[ExtResource("1_e5qi0")]([SubResource("Resource_u0dfy"), SubResource("Resource_dtaw5"), SubResource("Resource_qii32"), null, null])
 metadata/_custom_type_script = "uid://bjxudhys0ni6"
