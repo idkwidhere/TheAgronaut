@@ -19,5 +19,5 @@ func set_slot_data(slot_data: SlotData) -> void:
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		selected = item_data
-		print(selected)
-		
+	else:
+		selected = null

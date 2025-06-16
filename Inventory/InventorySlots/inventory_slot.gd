@@ -1,5 +1,7 @@
 extends PanelContainer
 
+var selected
+
 @onready var item_texture: TextureRect = $MarginContainer/ItemTexture
 @onready var quantity_label: Label = $QuantityLabel
 

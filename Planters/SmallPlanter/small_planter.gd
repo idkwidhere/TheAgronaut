@@ -18,6 +18,7 @@ var crop_stage_art: Array
 var current_crop_stage_art: Texture2D
 
 var selected_crop: ItemData
+var player_inventory: InventoryData
 
 #seed selection
 const INVENTORY_SLOT = preload("res://Inventory/InventorySlots/inventory_slot_buttons.tscn")
@@ -92,6 +93,7 @@ func _on_grow_timer_timeout() -> void:
 
 func set_inventory_data(inventory_data: InventoryData) -> void:
 	populate_item_grid(inventory_data.contents)
+	player_inventory = inventory_data
 	
 func populate_item_grid(slot_datas: Array[SlotData]) -> void:
 	for child in seed_container.get_children():
@@ -108,6 +110,10 @@ func populate_item_grid(slot_datas: Array[SlotData]) -> void:
 
 func _on_plant_button_pressed() -> void:
 	var selections = seed_container.get_children()
+	var to_subtract
 	for selection in selections:
 		if selection.selected:
 			start_crop(selection.item_data)
+			
+		else:
+			print("no crop selected!")

@@ -76,7 +76,10 @@ func _on_interact_area_body_exited(body: Node2D) -> void:
 	if !interactable:
 		interactables = false
 
-
+func subtract_player_inventory_item(item: SlotData) -> void:
+	if item in player_inventory.contents:
+		
+		print("found it")
 
 func _send_player_inventory() -> void:
 	print("sent player inventory")

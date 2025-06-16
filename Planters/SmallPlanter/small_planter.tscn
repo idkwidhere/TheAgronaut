@@ -58,6 +58,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
 [node name="SeedContainer" type="GridContainer" parent="PlanterMenu/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 columns = 5
 
