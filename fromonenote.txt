@@ -1,0 +1,69 @@
+Aboard the Agronaut you need to repair your grandfather's run down agricultural space station. You can earn money by growing crops and selling them to a middle man to send to the Earth. You start with your meager inheritance to purchase seeds and equipment to turn the station back into the flourishing vessel it once was. 
+
+Story:
+	• Nefarious middle man undercutting the player on the price of goods to make more profit
+	• Repair parts of the ship to help you find out what happened to your grandfather and why the station came into disrepair
+	
+	
+	
+Mechanics:
+	• Planters
+		Planters will be hydroponic boxes. Small planters will be simple, hold less crops. Larger planters will be towers.
+		○ Planter sizes
+			§ Small planter
+			§ Medium planter
+			§ Large planter
+		○ Plant nutrients
+			Plant nutrients need maintained in each planter and purchased from earth
+			§ Short mini game for balancing nutrients
+		
+	• Seasons
+		Instead of seasons - seasonal trends in crop demand. This replaces seasons in traditional farming sims
+		
+		○ 30 day rotation of trends
+
+
+NPCs:
+	• Middle man
+	• Other station operators
+		○ Woman
+		○ Man
+		○ Robots
+		○ Automated station
+	• Some kind of alien on the ship
+	
+
+
+
+Core mechanics:
+	
+	Growing crops:
+		○ Growing crops in hydroponic planters
+			§ Small planter - 2 seeds
+			§ Medium planter - 5 seeds
+			§ Large planter - 10 seeds
+			§ Wall of planters - variable amounts of seeds up to 20
+			§ Unlock new planters with upgrades (See "Upgrading the ship")
+	
+	
+		○ Maintaining nutrient levels in the hydroponic planters
+			§ Add nutrients when levels get low
+			§ Balancing pH levels in the planters
+	
+	
+		○ Dealing with plant diseases
+			§ If plants are neglected, they become diseased and need attention
+				□ Extra pruning or a special nutrient salve or something
+	
+	
+		○ Upgrading the ship:
+			§ Repairing the ship through in game events or purchases
+			§ Adds more room for planters
+
+
+Your grandfather has given up farming aboard the Agriculturalist's Orbital Union (AOU) Agronaut. He has moved on from the tedious and hazardous life of farming in space to return to Earth to retire in peace. He is an elusive man and he's moved to a remote island where the weather is warm and he is quite unreachable. However he has left you a choice; free yourself of your desk job in a crowded and polluted city where you will probably be die alone in the smog or restore the AOU Agronaut and grow crops on it once again.
+The station, once the largest, most advanced station in the union, has come under disrepair. The power is out in many sections of the station, almost all of the equipment and supplies have been looted by scavengers, and the old ship now stands abandoned. 
+You take up his offer, you don't have anything to lose. You charter a small ferry to make a stop at the receiving bay of the Agronaut. The captain of the ferry was expecting more than a single duffle bag to load into the cargo hold but he's not upset.
+Upon arrival, you fish out your data pad and bring up the single correspondence from your grandfather. It's a simple invitation along with the pin code to the air lock of the station. 4 digits stand between you and your next big adventure, you punch them into the lock panel and bid the ferry's captain farewell. 
+The station stinks. An earthy and metallic stink like… well, an empty old agricultural space station. You didn't know what you were expecting, not this? Or maybe it was exactly this. There is still emergency solar power running, you can see the station's main terminal blinking - awaiting orders. 
+
