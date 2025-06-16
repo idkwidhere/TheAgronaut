@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://by7bgikp2rosi"]
+
+[ext_resource type="Script" uid="uid://bc2worodcr3m3" path="res://Inventory/InventorySlots/inventory_slot_buttons.gd" id="1_142v8"]
+
+[node name="ButtonSlot" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+toggle_mode = true
+script = ExtResource("1_142v8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ItemTexture" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuantityLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+text = "x99"
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

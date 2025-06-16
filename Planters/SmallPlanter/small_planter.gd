@@ -16,10 +16,11 @@ var crop_stages: int
 var current_crop_stage: int
 var crop_stage_art: Array
 var current_crop_stage_art: Texture2D
+
 var selected_crop: ItemData
 
 #seed selection
-const INVENTORY_SLOT = preload("res://Inventory/InventorySlots/inventory_slot.tscn")
+const INVENTORY_SLOT = preload("res://Inventory/InventorySlots/inventory_slot_buttons.tscn")
 @onready var seed_container: GridContainer = $PlanterMenu/PanelContainer/MarginContainer/SeedContainer
 
 # Called when the node enters the scene tree for the first time.
@@ -106,4 +107,7 @@ func populate_item_grid(slot_datas: Array[SlotData]) -> void:
 
 
 func _on_plant_button_pressed() -> void:
-	pass
+	var selections = seed_container.get_children()
+	for selection in selections:
+		if selection.selected:
+			start_crop(selection.item_data)
