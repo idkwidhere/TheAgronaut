@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://oth4mrxvkfxu" path="res://Map/TheAgronaut/the_agronaut.tscn" id="1_jbgxd"]
 [ext_resource type="PackedScene" uid="uid://d14xug601no3" path="res://Globals/time.tscn" id="2_7ssmc"]
 [ext_resource type="PackedScene" uid="uid://b1n6a7gf1auln" path="res://Entities/Player/player.tscn" id="2_c4aad"]
-[ext_resource type="Texture2D" uid="uid://buow0gthby1pu" path="res://icon.svg" id="3_c4aad"]
+[ext_resource type="Texture2D" uid="uid://bgqsh2p2iv7q6" path="res://Assets/Large 1024x1024/Blue Nebula/Blue_Nebula_03-1024x1024.png" id="5_7ssmc"]
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_dcklx")
@@ -16,10 +16,12 @@ script = ExtResource("1_dcklx")
 [node name="Player" parent="." instance=ExtResource("2_c4aad")]
 position = Vector2(65, 101)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-58, 17)
-texture = ExtResource("3_c4aad")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(312, -61)
-texture = ExtResource("3_c4aad")
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -2279.0
+offset_top = -993.0
+offset_right = 3176.0
+offset_bottom = 1819.0
+texture = ExtResource("5_7ssmc")
+expand_mode = 1
+stretch_mode = 1
