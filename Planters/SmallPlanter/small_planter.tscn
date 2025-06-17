@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://qfpqoylo25pd"]
+[gd_scene load_steps=6 format=3 uid="uid://qfpqoylo25pd"]
 
 [ext_resource type="Script" uid="uid://cmn5gpqn4h3q" path="res://Planters/SmallPlanter/small_planter.gd" id="1_ceikg"]
 [ext_resource type="Texture2D" uid="uid://cplwlwa1wvdgt" path="res://Planters/SmallPlanter/smallplanter.png" id="1_k62c7"]
 [ext_resource type="Texture2D" uid="uid://bhn3upej1pssk" path="res://Planters/keyboard_e.svg" id="3_1ojov"]
+[ext_resource type="Texture2D" uid="uid://uac4m44n5psp" path="res://Planters/SmallPlanter/smallplanter_gui.png" id="4_a40ux"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ceikg"]
 radius = 22.0
@@ -40,7 +41,6 @@ unique_name_in_owner = true
 
 [node name="PlanterMenu" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="PlanterMenu"]
 anchors_preset = 15
@@ -75,6 +75,17 @@ offset_bottom = 208.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Plant"
+
+[node name="PlanterGUI" type="Node2D" parent="PlanterMenu"]
+
+[node name="PlanterGraphic" type="TextureRect" parent="PlanterMenu/PlanterGUI"]
+offset_left = 554.0
+offset_top = 148.0
+offset_right = 1497.0
+offset_bottom = 679.0
+texture = ExtResource("4_a40ux")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="timeout" from="GrowTimer" to="." method="_on_grow_timer_timeout"]
 [connection signal="pressed" from="PlanterMenu/PlantButton" to="." method="_on_plant_button_pressed"]
