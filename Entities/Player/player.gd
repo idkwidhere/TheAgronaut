@@ -9,7 +9,7 @@ var player_direction: Vector2
 var interactable: Array
 var interactables: bool = false
 var closest_interactable = 0
-var closest_distance
+var closest_distance = INF
 
 # inventory
 var is_player_menu_open = false
@@ -41,11 +41,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
-	pass
-	
+	if interactable:
+		var closest = find_closest_interactable()
+		interactable[closest].show_interaction()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and interactable:
-		interactable[0].interact_handler()
+		interactable[find_closest_interactable()].interact_handler()
 	if Input.is_action_just_pressed("menu"):
 		open_player_menu()
 
@@ -60,21 +62,21 @@ func open_player_menu():
 
 func find_closest_interactable(): # sort all interactables in range to get the closest one to interact with
 	for item in interactable:
-		pass
-
+		var distance = $PlayerCollider.global_position.distance_to(item.global_position)
+		#print(distance)
+		if distance < closest_distance:
+			closest_distance = distance
+			closest_interactable = item
+	return interactable.find(closest_interactable)
+			
 func _on_interact_area_body_entered(body: Node2D) -> void:
 	if body.has_node("Interactable"):
 		interactable.append(body)
-		interactables = true
-	if interactable:
-		interactable[0].show_interaction()
 
 func _on_interact_area_body_exited(body: Node2D) -> void:
 	if body in interactable:
 		body.hide_interaction()
 		interactable.erase(body)
-	if !interactable:
-		interactables = false
 
 func subtract_player_inventory_item(item: SlotData) -> void:
 	if item in player_inventory.contents:

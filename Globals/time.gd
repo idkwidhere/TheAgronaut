@@ -36,5 +36,5 @@ func _on_minute_timer_timeout() -> void:
 	update_clock()
 	
 func update_clock() -> void:
-	%Minutes.text = str(minute)
 	%Hours.text = str(hour)
+	%Minutes.text = str(minute / 10) + "0"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://qfpqoylo25pd"]
+[gd_scene load_steps=7 format=3 uid="uid://qfpqoylo25pd"]
 
 [ext_resource type="Script" uid="uid://cmn5gpqn4h3q" path="res://Planters/SmallPlanter/small_planter.gd" id="1_ceikg"]
 [ext_resource type="Texture2D" uid="uid://cplwlwa1wvdgt" path="res://Planters/SmallPlanter/smallplanter.png" id="1_k62c7"]
@@ -8,6 +8,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ceikg"]
 radius = 22.0
 height = 60.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a40ux"]
+radius = 56.0357
 
 [node name="SmallPlanter" type="StaticBody2D"]
 script = ExtResource("1_ceikg")
@@ -43,6 +46,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="PanelContainer" type="PanelContainer" parent="PlanterMenu"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -63,6 +67,7 @@ layout_mode = 2
 columns = 5
 
 [node name="PlantButton" type="Button" parent="PlanterMenu"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -79,13 +84,34 @@ text = "Plant"
 [node name="PlanterGUI" type="Node2D" parent="PlanterMenu"]
 
 [node name="PlanterGraphic" type="TextureRect" parent="PlanterMenu/PlanterGUI"]
-offset_left = 554.0
-offset_top = 148.0
-offset_right = 1497.0
-offset_bottom = 679.0
+offset_left = 478.0
+offset_top = 218.0
+offset_right = 1421.0
+offset_bottom = 749.0
 texture = ExtResource("4_a40ux")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Crop1" type="Area2D" parent="PlanterMenu/PlanterGUI"]
+position = Vector2(670, 579)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterMenu/PlanterGUI/Crop1"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_a40ux")
+
+[node name="Crop2" type="Area2D" parent="PlanterMenu/PlanterGUI"]
+position = Vector2(670, 579)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterMenu/PlanterGUI/Crop2"]
+position = Vector2(270, 2)
+shape = SubResource("CircleShape2D_a40ux")
+
+[node name="Crop3" type="Area2D" parent="PlanterMenu/PlanterGUI"]
+position = Vector2(670, 579)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanterMenu/PlanterGUI/Crop3"]
+position = Vector2(553, -1)
+shape = SubResource("CircleShape2D_a40ux")
 
 [connection signal="timeout" from="GrowTimer" to="." method="_on_grow_timer_timeout"]
 [connection signal="pressed" from="PlanterMenu/PlantButton" to="." method="_on_plant_button_pressed"]

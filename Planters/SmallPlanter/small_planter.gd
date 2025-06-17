@@ -49,14 +49,15 @@ func interact_handler():
 	if !is_growing and !is_empty:
 		collect_crop()
 	elif !is_growing and is_empty:
+		SignalBus.emit_signal("request_player_inventory")
 		%PlanterMenu.show()
 		is_menu_open = true
-		SignalBus.emit_signal("request_player_inventory")
-		
 	elif is_growing and is_menu_open:
 		%PlanterMenu.hide()
 		is_menu_open = false
 	else:
+		%PlanterMenu.hide()
+		is_menu_open = false
 		print("Not ready!")
 
 
